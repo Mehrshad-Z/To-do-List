@@ -20,28 +20,40 @@ body {
   justify-content: center;
   align-items: center;
   font-family: "work sans", Tahoma, Geneva, Verdana, sans-serif;
-  background-color: rgb(21, 21, 21);
+  background-color: #151515;
+}
+
+button,
+input {
+  border: none;
+  outline: none;
+}
+
+.hidden {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
 }
 
 .container {
   width: 100%;
   max-width: 450px;
-  display: flex;
   flex-flow: column;
+  gap: 20px;
 }
 
 .add-section {
-  display: flex;
   align-items: center;
   gap: 10px;
+  max-width: 430px;
 }
 
-#write-task {
+#set-task {
   flex: 1;
   min-width: 200px;
   padding: 15px;
-  border: none;
-  outline: none;
   border-radius: 30px;
   background-color: #f0f0f0;
 
@@ -63,10 +75,9 @@ body {
 .add-task {
   grid-row: 3 / 9;
   grid-column: 1/7;
-  background-color: rgb(21, 21, 21);
-  border: none;
+  background-color: #151515;
   border-radius: 100%;
-  box-shadow: 2px 0px 7px rgb(8, 8, 8), -2px 0px 7px rgb(41, 41, 41);
+  box-shadow: 2px 0px 7px #080808, -2px 0px 7px #292929;
 
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
@@ -75,7 +86,6 @@ body {
 }
 
 .add-color {
-  border: none;
   border-radius: 100%;
 
   -webkit-border-radius: 100%;
@@ -115,20 +125,18 @@ body {
 }
 
 .tasks-section {
-  width: 80%;
+  width: 83%;
 }
 
 .col {
   width: 100%;
-  display: flex;
   flex-direction: column;
   justify-content: center;
-  gap: 10px;
+  gap: 15px;
   padding: 20px;
-  background-color: rgb(21, 21, 21);
-  color: rgb(246, 246, 246);
+  background-color: #151515;
   border-radius: 30px;
-  box-shadow: 4px 4px 10px rgb(11, 11, 11), -4px -4px 10px #1e1e1e;
+  box-shadow: 4px 4px 10px #0b0b0b, -4px -4px 10px #1e1e1e;
   position: relative;
 
   -webkit-border-radius: 30px;
@@ -138,65 +146,55 @@ body {
 }
 
 .result-box {
-    width: 40px;
-    height: 80%;
-    padding: 15px 0;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #f0f0f0;
-    color: black;
-    border-radius: 0 30px 30px 0;
-    position: absolute;
-    right: -40px;
-    z-index: -1;
+  width: 40px;
+  height: 80%;
+  padding: 15px 0;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #f0f0f0;
+  color: #000000;
+  border-radius: 0 30px 30px 0;
+  position: absolute;
+  right: 0px;
+  z-index: -1;
 
-    -webkit-border-radius: 0 30px 30px 0;
-    -moz-border-radius: 0 30px 30px 0;
-    -ms-border-radius: 0 30px 30px 0;
-    -o-border-radius: 0 30px 30px 0;
+  -webkit-border-radius: 0 30px 30px 0;
+  -moz-border-radius: 0 30px 30px 0;
+  -ms-border-radius: 0 30px 30px 0;
+  -o-border-radius: 0 30px 30px 0;
 }
 
 .result-text {
   font-size: 2.2rem;
   transform: rotate(90deg);
+
   -webkit-transform: rotate(90deg);
   -moz-transform: rotate(90deg);
   -ms-transform: rotate(90deg);
   -o-transform: rotate(90deg);
 }
 
-.result-icon {
-}
-
-.incomplete {
+.incomplete,
+.complete {
   flex: 1;
-  display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 5px;
 }
 
 .task {
   width: 100%;
   height: 50px;
-  display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 8px;
-  border-radius: 30px;
-  position: relative; 
-
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  -o-border-radius: 30px;
+  position: relative;
 }
 
 #check-box {
   height: 100%;
   aspect-ratio: 1/1;
-  background-color: rgb(18, 18, 18);
+  background-color: #121212;
   border: 5px solid #404040;
   border-radius: 50%;
   appearance: none;
@@ -212,24 +210,22 @@ body {
   background-color: #b9ff4f;
 }
 
-#task-text{
-    border: none;
-    outline: none;
-    background-color: #1a1a1a;
+#task-text {
+  width: 70%;
+  background-color: #1a1a1a;
 }
 
 .task-menu {
-  display: flex;
   flex-flow: column;
   gap: 3px;
-  margin: 0 8px 0 0;
 }
 
-.task-menu span {
-  width: 5px;
+.task-menu-i {
+  width: 4px;
   aspect-ratio: 1/1;
   border-radius: 100%;
-  background-color: rgb(72, 72, 72);
+  background-color: #a6a6a6;
+
   -webkit-border-radius: 100%;
   -moz-border-radius: 100%;
   -ms-border-radius: 100%;
@@ -237,17 +233,17 @@ body {
 }
 
 .task-option {
+  height: 30px;
+  padding: 7px;
   display: none;
   align-items: center;
   justify-content: space-between;
   gap: 5px;
-  height: 30px;
-  padding: 7px;
+  border-radius: 10px;
+  background-color: #0f0f0f;
   position: absolute;
   right: 10px;
   top: -18px;
-  border-radius: 10px;
-  background-color: rgb(15, 15, 15);
 
   -webkit-border-radius: 10px;
   -moz-border-radius: 10px;
@@ -255,39 +251,27 @@ body {
   -o-border-radius: 10px;
 }
 
-.task-option-i {
-}
-
-.option-divider{
-    border: none;
-    width: 1px;
-    height: 100%;
-    background-color: #3636367d;
-}
-
-.task-menu:hover ~ .task-option {
-  display: flex;
-}
-
-.complete {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
+.option-divider {
+  width: 1px;
+  height: 100%;
+  border: none;
+  background-color: #3636367d;
 }
 
 .complete-head {
   padding-inline: 10px;
-  color: #e0e0e0;
+  font-size: 1.2rem;
+  color: #cecece;
 }
 
-.complete-head hr {
-  height: 2px;
-  background-color: rgb(169, 169, 169);
+.task-divider {
+  height: 1.5px;
+  margin-top: 4px;
+  background-image: linear-gradient(to right, #3636362a, #262626, #3636362b);
   border: none;
-  border-radius: 50px;
-  -webkit-border-radius: 50px;
-  -moz-border-radius: 50px;
-  -ms-border-radius: 50px;
-  -o-border-radius: 50px;
+  border-radius: 20%;
+  -webkit-border-radius: 20%;
+  -moz-border-radius: 20%;
+  -ms-border-radius: 20%;
+  -o-border-radius: 20%;
 }
