@@ -211,8 +211,9 @@ input {
 }
 
 #task-text {
-  width: 70%;
-  background-color: #1a1a1a;
+  width: 78%;
+  background-color: transparent;
+  color: #fff;
 }
 
 .task-menu {
